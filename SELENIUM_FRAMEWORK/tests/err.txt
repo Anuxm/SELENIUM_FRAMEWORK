@@ -1,0 +1,11 @@
+1]UnboundLocalError: local variable 'HomePage' referenced before assignment
+# Suppose you have defined the class as before
+class HomePage:
+    # Class code...
+
+# And you are trying to create an instance like this
+def some_function():
+    HomePage = "some value"  # This creates a variable named HomePage in the function scope
+    # Now if you try to create an instance of the class, it will raise the UnboundLocalError
+    home_page = HomePage(driver)  # UnboundLocalError: local variable 'HomePage' referenced before assignment
+dont give variable name as class name

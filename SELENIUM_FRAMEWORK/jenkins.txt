@@ -1,0 +1,69 @@
+install java 17--add path--
+download jenkins lts--
+C:\Users\Asus\Downloads>java -jar jenkins.war
+
+
+1e067fabebfa43ce977f7070c2942e68
+ C:\Users\Asus\.jenkins\secrets\initialAdminPassword
+
+ by default jenkins runs on port 8080
+----------------------------------------------------------------------
+(changed c to d)
+D:\>set JENKINS_HOME=D:\
+
+D:\>java -jar jenkins.war --httpPort=8080 -path=D:\
+
+8b86c01d29194eec90975f5f3dc44738
+
+This may also be found at: D:\secrets\initialAdminPassword
+ access jenkins
+ incogmode-localhost:8080---give password---click install suggested plungin--username password
+
+ newitem--seleniumpython-freestyle---put path of framework---click advance--click use custom workspace--put path of framework
+ we are taking project from local directory
+ in source code management select none
+ in Build Steps
+--add build Steps--(we need to pass our build step command to run our testcases
+we have to give same commands in jenkins build commands)
+select execute shell
+provide your command
+
+(python -m pytest -v -s --html=C:\Users\Asus\Desktop\SELENIUM_FRAMEWORK\reports\reports.html
+instead of giving hardcding in jenjins wr have workspace keyword it will automatically create
+absolute path for u in run time.   workspace pass absolute path--in our project absolute path is=path of our project)
+
+(In Manage Jenkins → Configure System → Shell, set the shell path as
+C:\Windows\system32\cmd.exe)
+
+
+
+shell=python -m pytest -v -s --html=$WORKSPACE\reports\reports.html
+windows=python -m pytest -v -s --html=$WORKSPACE\reports\reports.html
+save--
+run--click build now
+logs will generate in console output
+
+test will run in chrome report vl generate
+
+
+(its like command prompt first we given path of our project and from there we are executing our tests)
+
+---------------------------------------------------------------------------
+add parameter in jenjins
+configure--select--this project is parameterized --browsername-
+chrome
+firefox
+in cmd 
+if u selected shell="$browsername"
+if u selected= Executive windows batch file-"%browsername%"
+python -m pytest --browser_name="%browserName%" -v -s --html=$WORKSPACE\reports\reports.html
+--------------------------------------------------------------
+pytest have a feature where all your test results can be exported as an xml--dat is junit reporting
+jenkins can read that xml and create a plugin
+for that configure--add post build action--published junit test result report
+in the end of cmd parse one cmd so that all your result will be exported as xml 
+
+python -m pytest --browser_name="%browserName%" -v -s --html=$WORKSPACE\reports\reports.html -v --junitxml="result.xml"
+
+in test report xml=give path where you want to store already in we have given absolute path
+/*.xml

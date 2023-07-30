@@ -1,0 +1,44 @@
+driver object u have given in setup to use that u can return driver object in setup
+and pass fixture name(setup in tc)---one way
+
+if u want to use yield and return at one method in fixture u can use request
+request.cls.driver=driver it will return driver
+driver object will sent to class object(TestOne)
+ here we are assigning local driver of fixture to class driver whichever class use this fixture in that class if there driver variable then this driver will go and assign to that
+
+ C:\Users\Asus\Desktop\SELENIUM_FRAMEWORK> python -m pytest -v -s
+ python -m pytest --browser_name chrome
+
+ #adding command line option
+ https://docs.pytest.org/en/7.1.x/example/simple.html
+ put it in conftest.py
+ def pytest_addoption(parser):
+    parser.addoption(
+        "--cmdopt", action="store", default="type1", help="my option: type1 or type2"
+    )
+
+
+   
+
+expect this browser name from your command line terminal. If you don't give this code and if you try to pass this key value from command line terminal, your pytest will not recognize. So, whatever you send it like from command line terminal, the key value whatever you send from here should match and should get registered in this addoption () method then only it will get activated.
+
+to retrieve your command line key value. Then you can actually do that with this request instance, you can simply say request.config, this is configuration property, that's why. Config.getOption
+
+cmd -- python -m pytest --browser_name chrome
+python -m pytest --browser_name edge
+
+
+#page object pattern
+for each page--we should have 5 different classes
+
+"""base class invoke fixture --in fixture driver will invoke
+C:\Users\Asus\Desktop\SELENIUM_FRAMEWORK>python -m pytest tests\test_home_ang.py -v -s
+"""
+python -m pytest tests\test_home_ang.py -v -s --html=tests\report.html
+
+ python -m pytest -v -s --html=tests\report.html
+
+pip install pytest-html
+-----------------------------------------------------------------------------------------------------------
+excel
+pip install openpyxl
