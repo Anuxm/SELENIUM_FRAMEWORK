@@ -1,0 +1,51 @@
+git config --global user.name ananya
+git config --global user.email anu37858@gmail.com
+
+git init
+git add filename or 
+git add a* (add all files to staging area)
+git branch (check wheather it is master or other branch)--list of branch
+(by default it will be in the master)
+(if u want to push to master)
+git commit -m "added first"
+git remote
+git remote -v
+git remote add origin https://github.com/anu434/SELENIUM_FRAMEWORK.git
+git push origin master
+-----------------------------------------------------------------
+(instead of direclty pushing to master create one branch)
+(these branches local repository branches are not visible in github (remote repo),to make it visible you have to expliclity push
+git branch dsa (it has copy of master branch )
+git checkout dsa (changing master to dsa)
+git add filename
+git commit -m "added to dsa branch"
+(i have already created algorithm branch in master(github), i want to add (local repo)dsa inside algorithm)
+ git push origin2 dsa:algorithm
+
+ #-------------create one more branch(from dsa branch)---------------#
+ git branch (now u are in dsa branch,if u craete new branch it will take a copy of dsa branch)
+ git branch pytest
+ git checkout pytest
+ git add filename
+ git commit -m "added to pytest file"
+ (now i want to push pytest branch in github ,master-branch-pytest,origin2 is master pytest branch will be created in master)
+ git push origin2 pytest
+ #------from master branch create one branch-----------------------#
+
+
+
+
+
+#------------------------------------------
+#connecting git local git repo to remote git repo
+D:\gitrelated>git remote -v
+
+D:\gitrelated>git remote add origin https://github.com/anu434/SELENIUM_FRAMEWORK.git
+
+D:\gitrelated>git push origin master
+Everything up-to-date
+
+D:\gitrelated>
+#-------------------------------------------------------------------
+git fetch
+git branch -a 

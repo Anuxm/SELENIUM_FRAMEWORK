@@ -1,0 +1,26 @@
+
+#add python path in system environment variable
+C:\Python310\
+C:\Python310\Scripts\   (user-path,system-path)
+#visual studio contl+shift+path  (open interpreter)
+#select env or create virtual env
+#{}python--bottom-click-configure python file--give python exe file path
+#sech python.exe file path--cmd--where python--C:\Python310\python.exe
+#(go to search bar in vs)install python in vs code
+
+
+#pip install selenium
+
+https://www.selenium.dev/downloads/
+#install required driver
+https://pypi.org/project/selenium/
+Chrome:	
+https://chromedriver.chromium.org/downloads
+Edge:
+https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/
+Firefox:
+https://github.com/mozilla/geckodriver/releases
+in github install geckodriver win64
+Safari:
+https://webkit.org/blog/6900/webdriver-support-in-safari-10/
+

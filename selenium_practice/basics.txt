@@ -1,0 +1,51 @@
+webdriver is the class present in the selenium pakage
+to invoke chrome u have call driver
+drom selenium we cant directly call chrome brower or firebox browser
+browser driver-- provide proxy driver using that we can invoke actual browser
+we cannt directly inove chrome browser using python we need to have intermediate driver
+ driver object holds the chromw browser
+ whaterver u perform on driver object that will be directly applied on the chrome browser
+ #driver has a full control on browser which got invoked
+
+ driver.get=hit the url in the  browser--open chrome and hit whaterver the url i have passed
+ driver.title=what is present on the browser lel (in the url there is one name(title))
+ (properties brakets wont come,it gets the title u want to see then print)
+ driver.current_url=it will get the url what is present at that moment on the browser
+ (before testing it we have to make sure that we have landed on correct url)
+
+ #text--will grab the element which is present in that element
+#---browser top level--tool bar elements-----#
+ #maximize the brower window
+ driver.maximize_window()
+
+ #from this website i want to go other url
+ #minimize the browser
+ driver.minimize_window()
+ #back symbol u see in browser<--- to navigate to previosurl
+ driver.back()
+ driver.minimize_window()
+ driver.back()
+ driver.refresh()
+ driver.forward()
+#locators--id,name,css selector,xpath,link texxt
+using these locators u can identify the elements on the page
+id,name,classname=if the developer defines this propertieswe can use it
+we can construct xpath and css selctor=any elements on the page
+
+#finding elements of webpage using the xpath
+#syntax="//tagname[@attribute="value"]"
+# tagname =input,form etc first element after<input  //form means it will select all the form
+
+#we can traverse from parent to child through tags //form/div[1]/input
+
+#finding elements of webpage using the css selector (to create custom css)
+#[using [],#id,.classname]
+#syntax="tagname[attribute="value"]"
+# #idvalue and .classname ex= ".alert-success"
+# #exampleInputPassword1
+
+#sometimes mutiple elements will match in xpath by default selenium starts from top left whaterver it first gets it try to enter i want to enter in last box we can try different class name or put in brakets give index[3]
+# (//tagname[@attribute='value'])[index]
+#assert-will tell pass or fail based upon our validation
+
+
